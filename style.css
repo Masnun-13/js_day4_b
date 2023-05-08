@@ -1,0 +1,92 @@
+body{
+    background-color: rgb(0, 0, 30);
+    color: white;
+}
+
+
+.intro{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    border: 3px solid black;
+    padding: 10px;
+    background-color: darkgray;
+    color: rgb(70, 0, 20);
+    text-shadow: black;
+}
+
+.blah{
+    font-size:120%;
+}
+
+.container{
+    position: relative;
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+}
+
+.clicker{
+    
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: auto;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    touch-action: manipulation;
+}
+
+.win-loss-area-fields{
+    width: 50px;
+    margin: 0px 10px 30px 10px;
+    font-weight: 900;
+}
+.arena-fields{
+    width: 70px;
+    margin: 0px 10px 30px 10px;
+    font-weight: 900;
+}
+
+
+#scisbutt{
+    color: white;
+    background-color: #2d6322;
+}
+
+#papbutt{
+    color: white;
+    background-color: #1c4f63;
+}
+
+
+#rockbutt{
+    color: white;
+    background-color: #7a0404;
+}
+
+#light{
+    color: white;
+    background-color: black;
+    border-radius: 20%;
+    padding: 10px 10px 10px 10px;
+    min-width: 70px;
+    min-height: 30px;
+}
