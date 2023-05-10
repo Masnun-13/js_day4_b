@@ -4,42 +4,43 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Day2</title>
+        <title>Day4</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1 class="intro">Lorem ipsum dolor sit amet.</h1>
-        <p class="blah">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum fuga magni nemo itaque obcaecati non, saepe doloremque nam maiores laborum esse fugiat nulla blanditiis earum minima quasi alias suscipit culpa?</p>
-        <br>
-        <br>
         <div class="container">
+            <div class="question">
+                <h2>What is</h2>
+                <button class="clicker" id="num1">0</button>
+                <button class="clicker" id="op">+</button>
+                <button class="clicker" id="num2">1</button>
+            </div>
+            <br>
+            <div class="input">
+                <input type="number" id="myAns">
+                <button class="clicker" id="check">Submit</button>
+            </div>
+            <br>
+            <br>
+            <div class="result">
+                <label for="you">Your answer</label>
+                <input type="text" id="you" class="arena-fields" disabled="true">
+                <label for="pc">Correct answer</label>
+                <input type="text" id="pc" class="arena-fields" disabled="true">
+                <br>
+                <button id="light"></button>
+            </div>
+            <br>
             <div class="win-loss-area">
                 <label for="win">Wins</label>
                 <input type="number" id="win" class="win-loss-area-fields" value="0" disabled="true">
                 <label for="los">Losses</label>
                 <input type="number" id="los" class="win-loss-area-fields" value="0" disabled="true">
             </div>
-            <div class="clicker">
-                <button id="rockbutt" onclick="rock()">Rock</button>
-                <button id="scisbutt" onclick="scissor()">Scissors</button>
-                <button id="papbutt" onclick="paper()">Paper</button>
-            </div>
             <br>
-            <br>
-            <div class="arena">
-                <label for="you">You picked</label>
-                <input type="text" id="you" class="arena-fields" disabled="true">
-                <label for="pc">Computer picked</label>
-                <input type="text" id="pc" class="arena-fields" disabled="true">
-                <br>
-                <img src="image/p1.png" id="p1" alt="">
-                <img src="image/blank.png" id="playerpic" alt="">
-                <button id="light"></button>
-                <img src="image/blank.png" id="pcpic" alt="">
-                <img src="image/pc1.png" id="pc1" alt="">
-            </div>
+            <button class="clicker" onclick="reset()">Reset</button>
         </div>
 
         <script src="script.js" async defer></script>

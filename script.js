@@ -1,123 +1,115 @@
+
+
+output=document.getElementById("light")
+
 var win = document.getElementById("win")
 
 var loss = document.getElementById('los')
 
-var output = document.getElementById("light")
+document.getElementById("num1").innerText=numpick()
+document.getElementById("num2").innerText=numpick()
+document.getElementById("op").innerText=oppick()
 
-var player = document.getElementById("you")
-var playerpic = document.getElementById("playerpic")
-var computer = document.getElementById("pc")
-var pcpic = document.getElementById("pcpic")
+var x= Number(document.getElementById("num1").innerText)
+var y= Number(document.getElementById("num2").innerText)
 
-function compick(){
+var opera = document.getElementById("op").innerText
+
+switch(opera){
+    case "+":
+        answer = Number(x+y)
+        break
+    case "-":
+        answer = Number(x-y)
+        break
+    case "*":
+        answer = Number(x*y)
+        break
+    case "/":
+        answer = Math.floor(Number(x/y))
+        break
+}
+
+var answer = 0
+
+
+
+
+function numpick(){
+    let x = Math.floor(Math.random() * 100) + 1
+    return x;
+}
+
+function oppick(){
     let x = Math.random()
-    if(x<0.34){
-        return "Rock"
+    if(x<0.26){
+        return "+"
     }
-    else if(x<0.67){
-        return "Scissors"
+    else if(x<0.51){
+        return "-"
+    }
+    else if(x<0.76){
+        return "*"
     }
     else{
-        return "Paper"
+        return "/"
     }
 }
 
-function rock(){
-    let g = compick()
-    player.value="Rock"
-    playerpic.src="image/rock.png"
-    if(g=="Rock")
+function check(){
+    document.getElementById("you").value=document.getElementById("myAns").value
+    document.getElementById("pc").value=answer
+    let x = Number(document.getElementById("you").value)
+    let y = Number(document.getElementById("pc").value)
+    if(x==y)
     {
-        computer.value="Rock"
-        pcpic.src="image/rock.png"
-        output.innerText="Tie!"
-        output.style.backgroundColor="#8a7a1f"
-    }
-    else if(g=="Scissors")
-    {
-        computer.value="Scissors"
-        pcpic.src="image/scissor.png"
         output.innerText="Win!"
         output.style.backgroundColor="#378527"
         let c = Number(win.value)
         c++
         win.value=c
     }
-    else if(g=="Paper")
+    else
     {
-        computer.value="Paper"
-        pcpic.src="image/paper.png"
         output.innerText="Lose!"
         output.style.backgroundColor="#970f0f"
         let c = Number(loss.value)
         c++
         loss.value=c
     }
+    document.getElementById("check").disabled=true;
 }
 
-function scissor(){
-    let g = compick()
-    player.value="Scissors"
-    playerpic.src="image/scissor.png"
-    if(g=="Rock")
-    {
-        computer.value="Rock"
-        pcpic.src="image/rock.png"
-        output.innerText="Lose!"
-        output.style.backgroundColor="#970f0f"
-        let c = Number(loss.value)
-        c++
-        loss.value=c
-    }
-    else if(g=="Scissors")
-    {
-        computer.value="Scissors"
-        pcpic.src="image/scissor.png"
-        output.innerText="Tie!"
-        output.style.backgroundColor="#8a7a1f"
-    }
-    else if(g=="Paper")
-    {
-        computer.value="Paper"
-        pcpic.src="image/paper.png"
-        output.innerText="Win!"
-        output.style.backgroundColor="#378527"
-        let c = Number(win.value)
-        c++
-        win.value=c
-    }
+document.getElementById("check").addEventListener("click", check)
+
+function reset(){
+    document.getElementById("check").disabled=false;
+    document.getElementById("num1").innerText=numpick()
+document.getElementById("num2").innerText=numpick()
+document.getElementById("op").innerText=oppick()
+
+let a= Number(document.getElementById("num1").innerText)
+let b= Number(document.getElementById("num2").innerText)
+
+let opera2 = document.getElementById("op").innerText
+
+switch(opera2){
+    case "+":
+        answer = Number(a+b)
+        break
+    case "-":
+        answer = Number(a-b)
+        break
+    case "*":
+        answer = Number(a*b)
+        break
+    case "/":
+        answer = Math.floor(Number(a/b))
+        break
 }
 
-function paper(){
-    let g = compick()
-    player.value="Paper"
-    playerpic.src="image/paper.png"
-    if(g=="Rock")
-    {
-        computer.value="Rock"
-        pcpic.src="image/rock.png"
-        output.innerText="Win!"
-        output.style.backgroundColor="#378527"
-        let c = Number(win.value)
-        c++
-        win.value=c
-    }
-    else if(g=="Scissors")
-    {
-        computer.value="Scissors"
-        pcpic.src="image/scissor.png"
-        output.innerText="Lose!"
-        output.style.backgroundColor="#970f0f"
-        let c = Number(loss.value)
-        c++
-        loss.value=c
-    }
-    else if(g=="Paper")
-    {
-        computer.value="Paper"
-        pcpic.src="image/paper.png"
-        output.innerText="Tie!"
-        output.style.backgroundColor="#8a7a1f"
-    }
 }
+
+
+
 
