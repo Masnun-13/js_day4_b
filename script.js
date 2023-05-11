@@ -13,7 +13,9 @@ document.getElementById("op").innerText=oppick()
 var x= Number(document.getElementById("num1").innerText)
 var y= Number(document.getElementById("num2").innerText)
 
-var opera = document.getElementById("op").innerText
+let opera = document.getElementById("op").innerText
+
+var answer = 0
 
 switch(opera){
     case "+":
@@ -30,7 +32,7 @@ switch(opera){
         break
 }
 
-var answer = 0
+
 
 
 
